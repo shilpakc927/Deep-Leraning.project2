@@ -128,3 +128,148 @@ The RNN is implemented in Keras.
         pickle.dump(tokenizer, f)
     ```
 
+---
+## 🌐 Flask Application (`app.py`)
+
+The Flask app manages routing and predictions.
+
+**Routes:**
+
+- `/`  
+  Displays `front.html`, the dashboard introduction.
+
+- `/home`  
+  Handles:  
+  - **GET:** Shows prediction form in `home.html`.
+  - **POST:** Receives input text, runs prediction, displays results.
+
+**Example Prediction Flow:**
+```python
+with open("tokenizer.pkl", "rb") as f:
+    tokenizer = pickle.load(f)
+
+sequence = tokenizer.texts_to_sequences([input_text])
+padded = pad_sequences(sequence, maxlen=100)
+prediction = model.predict(padded)
+label = "Spam" if prediction > 0.5 else "Ham"
+```
+---
+
+## 🖥️ HTML Templates
+
+**`front.html`**
+
+This is the introduction dashboard page.
+
+- Title and welcome text
+- Link/button to go to the prediction page (/home)
+
+**`home.html`**
+
+This page handles:
+
+- Text input form
+- Showing prediction results
+- Thank you message after exit
+
+**Behavior:**
+
+- **When GET:** Shows the text input form
+- **When POST:** Displays the prediction result and exit button.
+- **When exit button clicked:** Shows a thank you message.
+
+---
+## ⚙️ How to Run
+1. **Clone the repository:**
+    ```python
+    git clone https://github.com/your-username/spam_classifier.git
+    cd spam_classifier/flask4
+
+     ```
+
+3. **Create a virtual environment:**
+    ```python
+    python -m venv venv
+    source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+    ```
+    
+5. **Install dependencies:**
+     ```python 
+    pip install -r requirements.txt
+      ```
+
+7. **Train model (if needed):**
+   - Open the Jupyter Notebook (spam RNN .ipynb).
+   - Run all cells to generate spam_model.h5 and tokenizer.pkl.
+
+8. **Run Flask app:**
+     ```python
+    python app.py
+     ```
+     
+10. **Open your browser:**
+    ```
+    http://127.0.0.1:5000/
+    ```
+---
+## 🧪 Workflow Summary
+```
+✅ Step 1: Open dashboard (/) – start detection button.
+✅ Step 2: Go to input page (/home) – enter text and submit.
+✅ Step 3: Prediction result displayed with label.
+✅ Step 4: Click exit – shows thank you message.
+
+```
+---
+## 🛠️ Technologies Used
+- Python 3
+- TensorFlow/Keras
+- Flask
+- HTML/CSS
+
+ ---
+
+## 📄 License
+   MIT License
+ 
+---
+
+## 📁 Files Included
+- `spam RNN.ipynb` – Jupyter Notebook for training
+- `front.html` – html introduction page
+- `home.html` -  input and prediction page
+- `spam.csv` - dataset
+- `spam_model.h5` - trained model
+- `tokenizer.pkl' – tokenizer file
+---
+## 📸 Project Screenshots
+
+- [Dashboard Page](Screenshot%201.png)
+- [Upload Page](Screenshot%202.png)
+- [Prediction Result](Screenshot%203.png)
+- [Thank You Message](Screenshot%204.png)
+
+---
+
+## 📩 Contact
+
+**Shilpa K C**  
+[LinkedIn](https://www.linkedin.com/in/shilpa-kc) | [Email](shilpakcc@gmail.com)
+
+For questions or suggestions, feel free to reach out.
+
+✅ **How to use this:**
+- Copy everything **inside the fences above** (including the triple backticks at the start and end).
+- Save it as:
+  README.md
+- Place it in your project folder.
+- Commit and push to GitHub.
+
+✅ This is **one single README file** describing:
+- Notebook
+- Flask
+- Two HTML pages
+- Complete workflow
+
+---
