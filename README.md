@@ -82,26 +82,32 @@ The RNN is implemented in Keras.
 - **LSTM Layer** to learn sequence patterns.
 - **Dense Output Layer** with sigmoid activation.
 
-**Training Workflow:**
+**Training Workflow**
 
-1. **Tokenization:**
-   ```python
-   tokenizer = Tokenizer()
-   tokenizer.fit_on_texts(messages)
-   sequences = tokenizer.texts_to_sequences(messages)
-   ```
-2. **Padding:**
-   ```python
-      X = pad_sequences(sequences, maxlen=100)
-   ```
-3. **Model:**
-   ```python
-     model = Sequential()
-     model.add(Embedding(vocab_size, 128))
-     model.add(LSTM(64))
-     model.add(Dense(1, activation='sigmoid'))
-  ```
-4. **Training:**
+1. **Tokenization**
+
+    ```python
+    tokenizer = Tokenizer()
+    tokenizer.fit_on_texts(messages)
+    sequences = tokenizer.texts_to_sequences(messages)
+    ```
+
+2. **Padding**
+
+    ```python
+    X = pad_sequences(sequences, maxlen=100)
+    ```
+
+3. **Model**
+
+    ```python
+    model = Sequential()
+    model.add(Embedding(vocab_size, 128))
+    model.add(LSTM(64))
+    model.add(Dense(1, activation='sigmoid'))
+    ```
+
+4. **Training**
 
     ```python
     model.compile(
@@ -113,9 +119,12 @@ The RNN is implemented in Keras.
     model.fit(X, y, epochs=5, batch_size=32)
     ```
 
-5. **Saving:**
-   ```python
+5. **Saving**
+
+    ```python
     model.save("spam_model.h5")
+
     with open("tokenizer.pkl", "wb") as f:
-    pickle.dump(tokenizer, f)
-   ```
+        pickle.dump(tokenizer, f)
+    ```
+
