@@ -245,10 +245,11 @@ This page handles:
 ---
 ## 📸 Project Screenshots
 
-- [Dashboard Page](Screenshot%201.png)
-- [Upload Page](Screenshot%202.png)
-- [Prediction Result](Screenshot%203.png)
-- [Thank You Message](Screenshot%204.png)
+- [Dashboard Page](Screenshot%2011.png)
+- [Upload Page](Screenshot%2012.png)
+- [Prediction Result](Screenshot%2013.png)
+- [Exit](Screenshot%2014.png)
+- [Thank You Message](Screenshot%2015.png)
 
 ---
 
