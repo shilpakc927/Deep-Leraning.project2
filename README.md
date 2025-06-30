@@ -170,6 +170,7 @@ This page handles:
 
 - Text input form
 - Showing prediction results
+- Exit warning
 - Thank you message after exit
 
 **Behavior:**
@@ -241,7 +242,7 @@ This page handles:
 - `home.html` -  input and prediction page
 - `spam.csv` - dataset
 - `spam_model.h5` - trained model
-- `tokenizer.pkl' – tokenizer file
+- `tokenizer.pkl` – tokenizer file
 ---
 ## 📸 Project Screenshots
 
