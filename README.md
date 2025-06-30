@@ -103,10 +103,10 @@ The RNN is implemented in Keras.
   ```
 
 4.**Training:**
-  ```python
+   ```python
     model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
     model.fit(X, y, epochs=5, batch_size=32)
-  ```
+   ```
 
 5.**Saving:**
   ```python
