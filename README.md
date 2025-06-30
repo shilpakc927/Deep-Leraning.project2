@@ -101,16 +101,21 @@ The RNN is implemented in Keras.
      model.add(LSTM(64))
      model.add(Dense(1, activation='sigmoid'))
   ```
+4. **Training:**
 
-4.**Training:**
-   ```python
-    model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+    ```python
+    model.compile(
+        optimizer='adam',
+        loss='binary_crossentropy',
+        metrics=['accuracy']
+    )
+
     model.fit(X, y, epochs=5, batch_size=32)
-   ```
+    ```
 
-5.**Saving:**
-  ```python
+5. **Saving:**
+   ```python
     model.save("spam_model.h5")
     with open("tokenizer.pkl", "wb") as f:
     pickle.dump(tokenizer, f)
- ```
+   ```
